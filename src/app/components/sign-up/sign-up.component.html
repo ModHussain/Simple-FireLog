@@ -1,0 +1,33 @@
+<nav>
+    <div class="nav-wrapper light-blue darken-4">
+      <i class="material-icons prefix ">whatshot</i>
+      
+    </div>  
+  </nav>
+<div class="container mt-5 ">
+    <form class="card border mt-5">
+        <h3 class="text-center mt-5"><i class="material-icons prefix">fingerprint</i>&nbsp;Sign Up</h3>
+        <div class="row">
+          <div class="input-field  card col-4 offset-sm-4">
+            <i class="material-icons prefix ">account_circle</i>
+            <input id="icon_prefix" type="text" class="validate" #userEmail required>
+            <label for="icon_prefix">Email</label>
+          </div>
+          <div class="input-field card col-4 offset-sm-4">
+            <i class="material-icons prefix">lock</i>
+            <input id="icon_password" type="password" class="validate" #userPwd required>
+            <label for="icon_password ">Password</label>
+          </div>
+          <div class="input-field col-4 offset-sm-4 text-center">
+            <button class="btn waves-effect waves-light white" (click)="authService.SignUp(userEmail.value, userPwd.value)">Submit
+              <i class="material-icons right ">send</i>
+            </button>
+          </div>
+          
+        </div>
+         
+    <div class="redirectToLogin text-center mb-5">
+        <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>
+      </div>
+      </form>
+</div>

@@ -1,0 +1,33 @@
+<nav>
+    <div class="nav-wrapper light-blue darken-4">
+      <i class="material-icons prefix ">whatshot</i>
+      
+    </div>  
+  </nav>
+  <div class="container mt-5 ">
+    <form class="card border mt-5">
+        <h3>Thank You for Registering</h3>
+  
+        <div class="formGroup" *ngIf="authService.userData as user">
+          <p class="text-center">We have sent a confirmation email to <strong>{{user.email}}</strong>.</p>
+          <p class="text-center">Please check your email and click on the link to verfiy your email address.</p>
+        </div>
+  
+        <!-- Calling SendVerificationMail() method using authService Api -->
+        <div class="formGroup text-center my-4">
+          <button type="button" class="btn btnPrimary" (click)="authService.SendVerificationMail()">
+            <i class="fas fa-redo-alt"></i>
+            Resend Verification Email
+          </button>
+          
+      <div class="redirectToLogin mt-3">
+        <span>Go back to?<span class="redirect" routerLink="/sign-in"> Sign in</span></span>
+      </div>
+        </div>
+        
+        
+    </form>
+      </div>
+  
+  
+    
